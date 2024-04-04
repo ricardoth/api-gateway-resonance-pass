@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gateway-resonance-pass.Api", "api-gateway-resonance-pass\gateway-resonance-pass.Api.csproj", "{98394053-9285-4E14-A743-1EA367EA0D22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. WebApi", "01. WebApi", "{ECBE0A35-B4F1-40E1-9999-39E0C96CC6EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Application", "02. Application", "{679781A3-3D0E-4429-BEEA-D1B55B46D110}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Domain", "03. Domain", "{720C230A-EDC2-4FD5-AAA7-39AF2F1B6A16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Infraestructure", "04. Infraestructure", "{FE912394-C4DD-4901-93F7-33C0EF914FC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gateway-resonance-pass.Application", "gateway-resonance-pass.Application\gateway-resonance-pass.Application.csproj", "{772099BE-561D-4816-92DB-1C023AF0CF1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gateway-resonance-pass.Domain", "gateway-resonance-pass.Domain\gateway-resonance-pass.Domain.csproj", "{B66CDC43-4DCD-4576-AD48-C392FBDDBBEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gateway-resonance-pass.Infraestructure", "gateway-resonance-pass.Infraestructure\gateway-resonance-pass.Infraestructure.csproj", "{BFDD1F25-8202-4A45-AA09-5086F8C86209}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98394053-9285-4E14-A743-1EA367EA0D22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98394053-9285-4E14-A743-1EA367EA0D22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98394053-9285-4E14-A743-1EA367EA0D22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98394053-9285-4E14-A743-1EA367EA0D22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{772099BE-561D-4816-92DB-1C023AF0CF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772099BE-561D-4816-92DB-1C023AF0CF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772099BE-561D-4816-92DB-1C023AF0CF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772099BE-561D-4816-92DB-1C023AF0CF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66CDC43-4DCD-4576-AD48-C392FBDDBBEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66CDC43-4DCD-4576-AD48-C392FBDDBBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66CDC43-4DCD-4576-AD48-C392FBDDBBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66CDC43-4DCD-4576-AD48-C392FBDDBBEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFDD1F25-8202-4A45-AA09-5086F8C86209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDD1F25-8202-4A45-AA09-5086F8C86209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDD1F25-8202-4A45-AA09-5086F8C86209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDD1F25-8202-4A45-AA09-5086F8C86209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98394053-9285-4E14-A743-1EA367EA0D22} = {ECBE0A35-B4F1-40E1-9999-39E0C96CC6EE}
+		{772099BE-561D-4816-92DB-1C023AF0CF1A} = {679781A3-3D0E-4429-BEEA-D1B55B46D110}
+		{B66CDC43-4DCD-4576-AD48-C392FBDDBBEE} = {720C230A-EDC2-4FD5-AAA7-39AF2F1B6A16}
+		{BFDD1F25-8202-4A45-AA09-5086F8C86209} = {FE912394-C4DD-4901-93F7-33C0EF914FC1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C43B05C4-ECC5-4F95-84BB-D969EFF0075A}
+	EndGlobalSection
+EndGlobal
