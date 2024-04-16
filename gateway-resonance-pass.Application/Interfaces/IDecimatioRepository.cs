@@ -3,6 +3,6 @@ namespace gateway_resonance_pass.Application.Interfaces
 {
     public interface IDecimatioRepository
     {
-        Task<GetComunaGroupQueryResult> GetComunasGroup(GetComunaGroupQuery request);
+        Task<List<GetComunaGroupQueryResult>> GetComunasGroup(GetComunaGroupQuery request);
     }
 }

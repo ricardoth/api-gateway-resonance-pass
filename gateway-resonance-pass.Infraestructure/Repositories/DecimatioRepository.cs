@@ -1,4 +1,5 @@
 ﻿using Flurl.Http;
+using gateway_resonance_pass.Application.Decimatio.Queries.Comunas;
 
 namespace gateway_resonance_pass.Infraestructure.Repositories
 {
@@ -9,7 +10,7 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
         public DecimatioRepository(GatewayConfig config)
         {
             Config = config.ApiDecimatio;
-            Config.UserBasicAuth = Config.UserBasicAuth ?? config.UrlBasicAuth;
+            Config.UserBasicAuth = Config.UserBasicAuth ?? config.UserBasicAuth;
         }
 
         private IFlurlRequest Url
@@ -22,7 +23,13 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
 
         #region Decimatio Actions
 
-
+        public async Task<List<GetComunaGroupQueryResult>> GetComunasGroup(GetComunaGroupQuery request)
+        {
+            var response = await Url.AppendPathSegments("Decimatio", "GetComunas")
+                                .AllowAnyHttpStatus()
+                                .GetJsonAsync<List<GetComunaGroupQueryResult>>();
+            return response;
+        }
         #endregion
     }
 }

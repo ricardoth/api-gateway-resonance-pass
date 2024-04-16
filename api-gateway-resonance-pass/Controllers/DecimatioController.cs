@@ -12,7 +12,7 @@
         }
 
         [HttpGet("comunas/{idRegion}")]
-        public async Task<GetComunaGroupQueryResult> GetComunaQueryGroup(int idRegion)
+        public async Task<List<GetComunaGroupQueryResult>> GetComunaQueryGroup(int idRegion)
         {
             return await _mediator.Send(new GetComunaGroupQuery(idRegion));
         }

@@ -3,7 +3,8 @@
     public class GatewayConfig
     {
         public string SubscriptionKey { get; set; }
-        public string UrlBasicAuth { get; set; }
+        public string UrlService { get; set; }
+        public string UserBasicAuth { get; set; }
         public string PassBasicAuth { get; set; }
         public bool ValidateIdentification { get; set; }
         public GatewayConfigItemDecimatio ApiDecimatio { get; set; }

@@ -25,6 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\gateway-resonance-pass.Application\gateway-resonance-pass.Application.csproj" />
     <ProjectReference Include="..\gateway-resonance-pass.Domain\gateway-resonance-pass.Domain.csproj" />
+    <ProjectReference Include="..\gateway-resonance-pass.Infraestructure\gateway-resonance-pass.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

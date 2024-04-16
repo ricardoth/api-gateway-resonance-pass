@@ -1,4 +1,6 @@
-﻿using gateway_resonance_pass.Api.Helpers;
+﻿using gateway_resonance_pass.Application.Extensions;
+using gateway_resonance_pass.Domain.ValueObjects;
+using gateway_resonance_pass.Infraestructure.Extensions;
 using System.Reflection;
 
 namespace gateway_resonance_pass.Api.Configuration
@@ -13,6 +15,13 @@ namespace gateway_resonance_pass.Api.Configuration
             //{
             //    opt.Filters.Add(new ApiExceptionFilterAttribute());
             //});
+
+            var config = configuration.GetSection(nameof(GatewayConfig)).Get<GatewayConfig>();
+            service.AddSingleton(config);
+
+            service.AddCQRS();
+            service.AddDependencyInjection(configuration);
+
         }
     }
 }
