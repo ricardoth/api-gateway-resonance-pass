@@ -16,7 +16,6 @@
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Mappers\" />
-    <Folder Include="Decimatio\" />
     <Folder Include="Identification\" />
   </ItemGroup>
 

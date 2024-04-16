@@ -18,10 +18,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Configuration\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Mappers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\gateway-resonance-pass.Application\gateway-resonance-pass.Application.csproj" />
+    <ProjectReference Include="..\gateway-resonance-pass.Domain\gateway-resonance-pass.Domain.csproj" />
   </ItemGroup>
 
 </Project>
