@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace gateway_resonance_pass.Api.Controllers
+﻿namespace gateway_resonance_pass.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
