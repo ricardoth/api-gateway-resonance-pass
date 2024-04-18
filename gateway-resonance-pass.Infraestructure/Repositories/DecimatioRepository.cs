@@ -1,4 +1,4 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos;
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
 
 namespace gateway_resonance_pass.Infraestructure.Repositories
 {

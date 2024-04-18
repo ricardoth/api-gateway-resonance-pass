@@ -1,5 +1,4 @@
-﻿
-namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos
+﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll
 {
     public class GetEventoGroupQueryHandler : IRequestHandler<GetEventoGroupQuery, ApiResponse<GetEventoGroupQueryResult>>
     {
@@ -7,7 +6,7 @@ namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos
 
         public GetEventoGroupQueryHandler(IDecimatioRepository decimatioRepository)
         {
-            _decimatioRepository = decimatioRepository; 
+            _decimatioRepository = decimatioRepository;
         }
 
         public async Task<ApiResponse<GetEventoGroupQueryResult>> Handle(GetEventoGroupQuery request, CancellationToken cancellationToken)

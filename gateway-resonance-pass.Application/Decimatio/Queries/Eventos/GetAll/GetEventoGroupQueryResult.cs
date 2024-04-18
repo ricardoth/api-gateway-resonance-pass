@@ -1,4 +1,4 @@
-﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos
+﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll
 {
     public class GetEventoGroupQueryResult
     {
