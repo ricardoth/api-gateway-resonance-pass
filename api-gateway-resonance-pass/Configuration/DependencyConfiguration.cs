@@ -1,9 +1,4 @@
-﻿using gateway_resonance_pass.Application.Extensions;
-using gateway_resonance_pass.Domain.ValueObjects;
-using gateway_resonance_pass.Infraestructure.Extensions;
-using System.Reflection;
-
-namespace gateway_resonance_pass.Api.Configuration
+﻿namespace gateway_resonance_pass.Api.Configuration
 {
     public static class DependencyConfiguration
     {
@@ -11,17 +6,13 @@ namespace gateway_resonance_pass.Api.Configuration
         {
             service.AddMediatR(conf => conf.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
-            //service.AddControllers(opt =>
-            //{
-            //    opt.Filters.Add(new ApiExceptionFilterAttribute());
-            //});
-
             var config = configuration.GetSection("GatewayConfig").Get<GatewayConfig>();
-            //service.Configure<GatewayConfig>(configuration.GetSection("GatewayConfig"));
             service.AddSingleton(config);
 
             service.AddCQRS();
             service.AddDependencyInjection(configuration);
+
+            service.AddTransient<GlobalExceptionFilterAttribute>();
 
         }
     }

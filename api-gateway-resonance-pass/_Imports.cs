@@ -2,4 +2,11 @@
 global using MediatR;
 global using gateway_resonance_pass.Application.Decimatio.Queries.Comunas;
 global using gateway_resonance_pass.Domain.Entities;
-  
+global using gateway_resonance_pass.Api.Models;
+global using gateway_resonance_pass.Domain.Exceptions;
+global using System.Net;
+global using gateway_resonance_pass.Api.Helpers;
+global using gateway_resonance_pass.Application.Extensions;
+global using gateway_resonance_pass.Domain.ValueObjects;
+global using gateway_resonance_pass.Infraestructure.Extensions;
+global using System.Reflection;
