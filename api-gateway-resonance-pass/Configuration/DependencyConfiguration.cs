@@ -16,7 +16,8 @@ namespace gateway_resonance_pass.Api.Configuration
             //    opt.Filters.Add(new ApiExceptionFilterAttribute());
             //});
 
-            var config = configuration.GetSection(nameof(GatewayConfig)).Get<GatewayConfig>();
+            var config = configuration.GetSection("GatewayConfig").Get<GatewayConfig>();
+            //service.Configure<GatewayConfig>(configuration.GetSection("GatewayConfig"));
             service.AddSingleton(config);
 
             service.AddCQRS();

@@ -1,6 +1,8 @@
-﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Comunas
+﻿using gateway_resonance_pass.Domain.Entities;
+
+namespace gateway_resonance_pass.Application.Decimatio.Queries.Comunas
 {
-    public class GetComunaGroupQueryHandler : IRequestHandler<GetComunaGroupQuery, List<GetComunaGroupQueryResult>>
+    public class GetComunaGroupQueryHandler : IRequestHandler<GetComunaGroupQuery, ApiResponse<GetComunaGroupQueryResult>>
     {
         private readonly IDecimatioRepository _decimatioRepository;
 
@@ -9,7 +11,7 @@
             _decimatioRepository = decimatioRepository;           
         }
 
-        public Task<List<GetComunaGroupQueryResult>> Handle(GetComunaGroupQuery request, CancellationToken cancellationToken)
+        public Task<ApiResponse<GetComunaGroupQueryResult>> Handle(GetComunaGroupQuery request, CancellationToken cancellationToken)
         {
             return _decimatioRepository.GetComunasGroup(request);
         }

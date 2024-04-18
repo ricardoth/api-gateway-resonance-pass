@@ -18,4 +18,8 @@
     <Folder Include="Identification\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\gateway-resonance-pass.Domain\gateway-resonance-pass.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
