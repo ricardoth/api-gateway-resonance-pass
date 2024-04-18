@@ -1,4 +1,6 @@
-﻿namespace gateway_resonance_pass.Api.Controllers
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos;
+
+namespace gateway_resonance_pass.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,6 +17,12 @@
         public async Task<ApiResponse<GetComunaGroupQueryResult>> GetComunaQueryGroup(int idRegion)
         {
             return await _mediator.Send(new GetComunaGroupQuery(idRegion));
+        }
+
+        [HttpGet("eventos")]
+        public async Task<ApiResponse<GetEventoGroupQueryResult>> GetEventoQueryGroup()
+        {
+            return await _mediator.Send(new GetEventoGroupQuery());
         }
     }
 }

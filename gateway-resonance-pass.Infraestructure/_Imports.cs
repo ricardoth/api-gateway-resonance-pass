@@ -8,3 +8,4 @@ global using System.Text;
 global using Flurl.Http;
 global using gateway_resonance_pass.Application.Decimatio.Queries.Comunas;
 global using gateway_resonance_pass.Domain.Entities;
+global using gateway_resonance_pass.Domain.Exceptions;

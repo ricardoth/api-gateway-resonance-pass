@@ -1,4 +1,6 @@
-﻿namespace gateway_resonance_pass.Infraestructure.Repositories
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos;
+
+namespace gateway_resonance_pass.Infraestructure.Repositories
 {
     public sealed class DecimatioRepository : IDecimatioRepository
     {
@@ -32,20 +34,41 @@
 
                 if (response.StatusCode != 200)
                 {
-                    throw new Exception("Error en la solicitud HTTP");
+                    throw new BadRequestException("Error en la solicitud HTTP");
                 }
 
                 var responseContent = await response.GetStringAsync();
-                var deszerialize = JsonConvert.DeserializeObject<ApiResponse<GetComunaGroupQueryResult>>(responseContent);
-
-                return deszerialize;
-
+                var comunas = JsonConvert.DeserializeObject<ApiResponse<GetComunaGroupQueryResult>>(responseContent);
+                return comunas;
             }
             catch (Exception ex)
             {
-                throw new Exception("Hubo un error en llamar a las comunas");
+                throw new BadRequestException("Hubo un error en llamar a las comunas");
             }
       
+        }
+
+        public async Task<ApiResponse<GetEventoGroupQueryResult>> GetEventosGroup()
+        {
+            try
+            {
+                var response = await Url.AppendPathSegments("Evento")
+                    .AllowAnyHttpStatus()
+                    .GetAsync();
+
+                if (response.StatusCode != 200)
+                {
+                    throw new BadRequestException("Error en la solicitud HTTP");
+                }
+
+                var responseContent = await response.GetStringAsync();
+                var eventos = JsonConvert.DeserializeObject<ApiResponse<GetEventoGroupQueryResult>>(responseContent);
+                return eventos;
+            }
+            catch (Exception ex)
+            {
+                throw new BadRequestException("Hubo un error en llamar a las comunas");
+            }
         }
         #endregion
     }

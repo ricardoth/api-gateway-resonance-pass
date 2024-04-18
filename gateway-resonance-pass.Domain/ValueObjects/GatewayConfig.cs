@@ -7,7 +7,6 @@
         public bool ValidateIdentification { get; set; }
         public GatewayConfigItemDecimatio ApiDecimatio { get; set; }
         public GatewayConfigItemIdentification ApiIdentification { get; set; }
-
     }
 
     public class GatewayConfigItemDecimatio
