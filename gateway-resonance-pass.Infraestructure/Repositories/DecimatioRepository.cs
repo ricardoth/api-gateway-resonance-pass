@@ -1,4 +1,5 @@
 ﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
+using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage;
 
 namespace gateway_resonance_pass.Infraestructure.Repositories
 {
@@ -68,6 +69,30 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             catch (Exception ex)
             {
                 throw new BadRequestException("Hubo un error en llamar a las comunas");
+            }
+        }
+
+        public async Task<ApiResponse<GetPageEventoGroupQueryResult>> GetPageEventosGroup(GetPageEventoGroupQuery request)
+        {
+            try
+            {
+                var response = await Url.AppendPathSegments("Evento", "GetEventosPagination")
+                    .AllowAnyHttpStatus()
+                    .SetQueryParams(request)
+                    .GetAsync();
+
+                if (response.StatusCode != 200)
+                {
+                    throw new BadRequestException("Error en la solicitud HTTP");
+                }
+
+                var responseContent = await response.GetStringAsync();
+                var eventos = JsonConvert.DeserializeObject<ApiResponse<GetPageEventoGroupQueryResult>>(responseContent);
+                return eventos;
+            }
+            catch (FlurlHttpException ex)
+            {
+                throw new BadRequestException("Hubo un error en llamar a las comunas"); 
             }
         }
         #endregion

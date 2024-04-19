@@ -1,6 +1,6 @@
 ﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage
 {
-    public class GetPageEventoGroupQuery
+    public class GetPageEventoGroupQuery : IRequest<ApiResponse<GetPageEventoGroupQueryResult>>
     {
         public GetPageEventoGroupQuery(int idEvento, int pageSize, int pageNumber)
         {

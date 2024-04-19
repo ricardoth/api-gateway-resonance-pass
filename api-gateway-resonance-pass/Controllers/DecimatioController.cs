@@ -1,5 +1,5 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
+using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage;
 
 namespace gateway_resonance_pass.Api.Controllers
 {
@@ -24,6 +24,12 @@ namespace gateway_resonance_pass.Api.Controllers
         public async Task<ApiResponse<GetEventoGroupQueryResult>> GetEventoQueryGroup()
         {
             return await _mediator.Send(new GetEventoGroupQuery());
+        }
+
+        [HttpGet("eventos/page")]
+        public async Task<ApiResponse<GetPageEventoGroupQueryResult>> GetPageEventoQueryGroup([FromQuery] EventoFilters filters)
+        {
+            return await _mediator.Send(new GetPageEventoGroupQuery(filters.IdEvento, filters.PageSize, filters.PageNumber));
         }
     }
 }

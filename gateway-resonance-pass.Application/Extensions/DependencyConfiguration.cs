@@ -1,6 +1,4 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
-
-namespace gateway_resonance_pass.Application.Extensions
+﻿namespace gateway_resonance_pass.Application.Extensions
 {
     public static class DependencyConfiguration
     {
@@ -8,6 +6,7 @@ namespace gateway_resonance_pass.Application.Extensions
         {
             services.AddScoped<IRequestHandler<GetComunaGroupQuery, ApiResponse<GetComunaGroupQueryResult>>, GetComunaGroupQueryHandler>();
             services.AddScoped<IRequestHandler<GetEventoGroupQuery, ApiResponse<GetEventoGroupQueryResult>>, GetEventoGroupQueryHandler>();
+            services.AddScoped<IRequestHandler<GetPageEventoGroupQuery, ApiResponse<GetPageEventoGroupQueryResult>>, GetPageEventoGroupQueryHandler>();
         }
     }
 }
