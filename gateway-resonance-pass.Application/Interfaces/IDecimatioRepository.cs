@@ -1,5 +1,4 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage;
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
 
 namespace gateway_resonance_pass.Application.Interfaces
 {
@@ -12,9 +11,8 @@ namespace gateway_resonance_pass.Application.Interfaces
         #region Evento
         Task<ApiResponse<GetEventoGroupQueryResult>> GetEventosGroup();
         Task<ApiResponse<GetPageEventoGroupQueryResult>> GetPageEventosGroup(GetPageEventoGroupQuery request);
+        Task<ApiResponseObject<GetEventoByIdQueryResult>> GetEventosById(GetEventoByIdQuery request);
 
         #endregion
-
-
     }
 }
