@@ -1,5 +1,6 @@
 ﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
+using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage;
 
 namespace gateway_resonance_pass.Infraestructure.Repositories
@@ -69,7 +70,7 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                throw new BadRequestException("Hubo un error en llamar a las comunas");
+                throw new BadRequestException("Hubo un error en llamar a los eventos");
             }
         }
 
@@ -93,7 +94,7 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             }
             catch (FlurlHttpException ex)
             {
-                throw new BadRequestException("Hubo un error en llamar a las comunas"); 
+                throw new BadRequestException("Hubo un error en llamar a los eventos"); 
             }
         }
 
@@ -115,10 +116,32 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-
-                throw;
+                throw new BadRequestException("Hubo un error al obtener el evento");
             }
         }
+
+        public async Task<ApiResponse<GetEventoFilterGroupQueryResult>> GetEventosFilterGroup(GetEventoFilterGroupQuery request)
+        {
+            try
+            {
+                var response = await Url.AppendPathSegments("Evento", "GetEventosFilter")
+                    .AllowAnyHttpStatus()
+                    .SetQueryParams(request)
+                    .GetAsync();
+
+                if (response.StatusCode != 200)
+                    throw new BadRequestException("Error en la solicitud HTTP");
+
+                var responseContent = await response.GetStringAsync();
+                var evento = JsonConvert.DeserializeObject<ApiResponse<GetEventoFilterGroupQueryResult>>(responseContent);
+                return evento;
+            }
+            catch (Exception ex)
+            {
+                throw new BadRequestException("Hubo un error al obtener el evento");
+            }
+        }
+
         #endregion
     }
 }

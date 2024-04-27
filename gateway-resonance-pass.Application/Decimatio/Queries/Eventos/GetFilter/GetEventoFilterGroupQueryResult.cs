@@ -1,6 +1,6 @@
-﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage
+﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter
 {
-    public class GetPageEventoGroupQueryResult
+    public class GetEventoFilterGroupQueryResult
     {
         public long IdEvento { get; set; }
         public int IdLugar { get; set; }
@@ -15,6 +15,5 @@
         public bool? Banner { get; set; }
         public string? ContenidoBanner { get; set; }
         public bool? Activo { get; set; }
-        //public LugarDto? Lugar { get; set; }
     }
 }
