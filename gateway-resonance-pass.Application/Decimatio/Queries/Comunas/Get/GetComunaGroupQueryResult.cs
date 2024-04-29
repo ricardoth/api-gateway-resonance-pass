@@ -1,4 +1,4 @@
-﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Comunas
+﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Comunas.Get
 {
     public class GetComunaGroupQueryResult
     {

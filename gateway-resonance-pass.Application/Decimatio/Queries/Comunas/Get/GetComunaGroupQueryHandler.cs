@@ -1,4 +1,4 @@
-﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Comunas
+﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Comunas.Get
 {
     public class GetComunaGroupQueryHandler : IRequestHandler<GetComunaGroupQuery, ApiResponse<GetComunaGroupQueryResult>>
     {
@@ -6,7 +6,7 @@
 
         public GetComunaGroupQueryHandler(IDecimatioRepository decimatioRepository)
         {
-            _decimatioRepository = decimatioRepository;           
+            _decimatioRepository = decimatioRepository;
         }
 
         public Task<ApiResponse<GetComunaGroupQueryResult>> Handle(GetComunaGroupQuery request, CancellationToken cancellationToken)

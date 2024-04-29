@@ -1,4 +1,4 @@
-﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Regiones
+﻿namespace gateway_resonance_pass.Application.Decimatio.Queries.Regiones.Get
 {
     public class GetRegionGroupQueryResult
     {

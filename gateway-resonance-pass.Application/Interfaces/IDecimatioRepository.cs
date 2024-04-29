@@ -1,5 +1,7 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Comunas.Get;
+using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
+using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.Get;
 using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
 
 namespace gateway_resonance_pass.Application.Interfaces
@@ -20,6 +22,10 @@ namespace gateway_resonance_pass.Application.Interfaces
 
         #region Tipo Usuario
         Task<ApiResponse<GetTipoUsuarioGroupQueryResult>> GetTiposUsuariosGroup();
+        #endregion
+
+        #region Medios de Pago
+        Task<ApiResponse<GetMedioPagoGroupQueryResult>> GetMediosPagosGroup();
         #endregion
     }
 }
