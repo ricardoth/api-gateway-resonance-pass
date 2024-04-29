@@ -1,5 +1,6 @@
 ﻿using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
+using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
 
 namespace gateway_resonance_pass.Application.Extensions
 {
@@ -12,6 +13,7 @@ namespace gateway_resonance_pass.Application.Extensions
             services.AddScoped<IRequestHandler<GetPageEventoGroupQuery, ApiResponse<GetPageEventoGroupQueryResult>>, GetPageEventoGroupQueryHandler>();
             services.AddScoped<IRequestHandler<GetEventoByIdQuery, ApiResponseObject<GetEventoByIdQueryResult>>, GetEventoByIdQueryHandler>();
             services.AddScoped<IRequestHandler<GetEventoFilterGroupQuery, ApiResponse<GetEventoFilterGroupQueryResult>>, GetEventoFilterGroupQueryHandler>();
+            services.AddScoped<IRequestHandler<GetTipoUsuarioGroupQuery, ApiResponse<GetTipoUsuarioGroupQueryResult>>, GetTipoUsuarioGroupQueryHandler>();
         }
     }
 }

@@ -15,6 +15,13 @@
 
   <ItemGroup>
     <Folder Include="Decimatio\Commands\" />
+    <Folder Include="Decimatio\Queries\MercadoPagos\" />
+    <Folder Include="Decimatio\Queries\MediosPagos\" />
+    <Folder Include="Decimatio\Queries\Lugares\" />
+    <Folder Include="Decimatio\Queries\Sectores\" />
+    <Folder Include="Decimatio\Queries\TicketsScanners\" />
+    <Folder Include="Decimatio\Queries\Tickets\" />
+    <Folder Include="Decimatio\Queries\Usuarios\" />
     <Folder Include="Mappers\" />
     <Folder Include="Identification\" />
   </ItemGroup>

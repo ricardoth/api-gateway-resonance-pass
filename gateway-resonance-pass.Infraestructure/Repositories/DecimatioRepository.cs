@@ -2,6 +2,7 @@
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage;
+using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
 
 namespace gateway_resonance_pass.Infraestructure.Repositories
 {
@@ -25,7 +26,7 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             }
         }
 
-        #region Decimatio Actions
+        #region Comunas
 
         public async Task<ApiResponse<GetComunaGroupQueryResult>> GetComunasGroup(GetComunaGroupQuery request)
         {
@@ -50,7 +51,9 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             }
       
         }
+        #endregion
 
+        #region Eventos
         public async Task<ApiResponse<GetEventoGroupQueryResult>> GetEventosGroup()
         {
             try
@@ -94,7 +97,7 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             }
             catch (FlurlHttpException ex)
             {
-                throw new BadRequestException("Hubo un error en llamar a los eventos"); 
+                throw new BadRequestException("Hubo un error en llamar a los eventos");
             }
         }
 
@@ -106,7 +109,7 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
                     .AllowAnyHttpStatus()
                     .GetAsync();
 
-                if (response.StatusCode != 200) 
+                if (response.StatusCode != 200)
                     throw new BadRequestException("Error en la solicitud HTTP");
 
                 var responseContent = await response.GetStringAsync();
@@ -138,10 +141,33 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                throw new BadRequestException("Hubo un error al obtener el evento");
+                throw new BadRequestException("Hubo un error al obtener los eventos");
             }
         }
+        #endregion
 
+        #region Tipo Usuario
+        public async Task<ApiResponse<GetTipoUsuarioGroupQueryResult>> GetTiposUsuariosGroup()
+        {
+            try
+            {
+                var response = await Url.AppendPathSegments("TipoUsuario")
+                    .AllowAnyHttpStatus()
+                    .GetAsync();
+
+                if (response.StatusCode != 200)
+                    throw new BadRequestException("Error en la solicitud HTTP");
+
+                var responseContent = await response.GetStringAsync();
+                var tiposUsuario = JsonConvert.DeserializeObject<ApiResponse<GetTipoUsuarioGroupQueryResult>>(responseContent);
+                return tiposUsuario;
+
+            }
+            catch (Exception ex)
+            {
+                throw new BadRequestException("Hubo un error al obtener los tipos de usuarios");
+            }
+        }
         #endregion
     }
 }

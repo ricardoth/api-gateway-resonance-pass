@@ -2,6 +2,7 @@
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
 using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage;
+using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
 
 namespace gateway_resonance_pass.Api.Controllers
 {
@@ -44,6 +45,12 @@ namespace gateway_resonance_pass.Api.Controllers
         public async Task<ApiResponse<GetEventoFilterGroupQueryResult>> GetEventosFilterQueryGroup([FromQuery] string filter)
         {
             return await _mediator.Send(new GetEventoFilterGroupQuery(filter));
+        }
+
+        [HttpGet("tiposUsuarios")]
+        public async Task<ApiResponse<GetTipoUsuarioGroupQueryResult>> GetTiposUsuarioQueryGroup()
+        {
+            return await _mediator.Send(new GetTipoUsuarioGroupQuery());
         }
     }
 }
