@@ -1,10 +1,4 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Comunas.Get;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
-using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.Get;
-using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
-
-namespace gateway_resonance_pass.Application.Extensions
+﻿namespace gateway_resonance_pass.Application.Extensions
 {
     public static class DependencyConfiguration
     {
@@ -17,6 +11,7 @@ namespace gateway_resonance_pass.Application.Extensions
             services.AddScoped<IRequestHandler<GetEventoFilterGroupQuery, ApiResponse<GetEventoFilterGroupQueryResult>>, GetEventoFilterGroupQueryHandler>();
             services.AddScoped<IRequestHandler<GetTipoUsuarioGroupQuery, ApiResponse<GetTipoUsuarioGroupQueryResult>>, GetTipoUsuarioGroupQueryHandler>();
             services.AddScoped<IRequestHandler<GetMedioPagoGroupQuery, ApiResponse<GetMedioPagoGroupQueryResult>>, GetMedioPagoGroupQueryHandler>();
+            services.AddScoped<IRequestHandler<GetMedioPagoByIdQuery, ApiResponseObject<GetMedioPagoByIdQueryResult>>, GetMedioPagoByIdQueryHandler>();
         }
     }
 }

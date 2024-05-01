@@ -1,12 +1,4 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Comunas.Get;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetAll;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPage;
-using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.Get;
-using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
-
-namespace gateway_resonance_pass.Infraestructure.Repositories
+﻿namespace gateway_resonance_pass.Infraestructure.Repositories
 {
     public sealed class DecimatioRepository : IDecimatioRepository
     {
@@ -191,6 +183,27 @@ namespace gateway_resonance_pass.Infraestructure.Repositories
             catch (Exception ex)
             {
                 throw new BadRequestException("Hubo un error al obtener los medios de pago");
+            }
+        }
+
+        public async Task<ApiResponseObject<GetMedioPagoByIdQueryResult>> GetMedioPagoById(GetMedioPagoByIdQuery request)
+        {
+            try
+            {
+                var response = await Url.AppendPathSegments("MedioPago", request.IdMedioPago)
+                    .AllowAnyHttpStatus()
+                    .GetAsync();
+
+                if (response.StatusCode != 200)
+                    throw new BadRequestException("Error en la solicitud HTTP");
+
+                var responseContent = await response.GetStringAsync();  
+                var medioPago = JsonConvert.DeserializeObject<ApiResponseObject<GetMedioPagoByIdQueryResult>>(responseContent);
+                return medioPago;
+            }
+            catch (Exception ex)
+            {
+                throw new BadRequestException("Hubo un error al obtener el medio de pago");
             }
         }
         #endregion

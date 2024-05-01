@@ -1,10 +1,4 @@
-﻿using gateway_resonance_pass.Application.Decimatio.Queries.Comunas.Get;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
-using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
-using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.Get;
-using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
-
-namespace gateway_resonance_pass.Application.Interfaces
+﻿namespace gateway_resonance_pass.Application.Interfaces
 {
     public interface IDecimatioRepository
     {
@@ -26,6 +20,7 @@ namespace gateway_resonance_pass.Application.Interfaces
 
         #region Medios de Pago
         Task<ApiResponse<GetMedioPagoGroupQueryResult>> GetMediosPagosGroup();
+        Task<ApiResponseObject<GetMedioPagoByIdQueryResult>> GetMedioPagoById(GetMedioPagoByIdQuery request);
         #endregion
     }
 }
