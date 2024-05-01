@@ -10,8 +10,5 @@ global using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFil
 global using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.Get;
 global using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.GetById;
 global using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
-global using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetById;
-global using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetFilter;
-global using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.Get;
-global using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.GetById;
-global using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
+global using gateway_resonance_pass.Application.Decimatio.Queries.Regiones.Get;
+ 

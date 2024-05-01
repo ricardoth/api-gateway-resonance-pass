@@ -1,9 +1,15 @@
-﻿namespace gateway_resonance_pass.Application.Interfaces
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Regiones.Get;
+
+namespace gateway_resonance_pass.Application.Interfaces
 {
     public interface IDecimatioRepository
     {
         #region Comuna
         Task<ApiResponse<GetComunaGroupQueryResult>> GetComunasGroup(GetComunaGroupQuery request);
+        #endregion
+
+        #region Region
+        Task<ApiResponse<GetRegionGroupQueryResult>> GetRegionesGroup();
         #endregion
 
         #region Evento

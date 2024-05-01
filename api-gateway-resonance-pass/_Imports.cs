@@ -1,6 +1,5 @@
 ﻿global using Microsoft.AspNetCore.Mvc;
 global using MediatR;
-global using gateway_resonance_pass.Application.Decimatio.Queries.Comunas;
 global using gateway_resonance_pass.Domain.Entities;
 global using gateway_resonance_pass.Api.Models;
 global using gateway_resonance_pass.Domain.Exceptions;
@@ -18,3 +17,4 @@ global using gateway_resonance_pass.Application.Decimatio.Queries.Eventos.GetPag
 global using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.Get;
 global using gateway_resonance_pass.Application.Decimatio.Queries.MediosPagos.GetById;
 global using gateway_resonance_pass.Application.Decimatio.Queries.TipoUsuarios.Get;
+global using gateway_resonance_pass.Application.Decimatio.Queries.Regiones.Get;

@@ -13,6 +13,9 @@
 
         [HttpGet("comunas/{idRegion}")]
         public async Task<ApiResponse<GetComunaGroupQueryResult>> GetComunaQueryGroup(int idRegion) => await _mediator.Send(new GetComunaGroupQuery(idRegion));
+
+        [HttpGet("regiones")]
+        public async Task<ApiResponse<GetRegionGroupQueryResult>> GetRegionQueryGroup() => await _mediator.Send(new GetRegionGroupQuery());
        
         [HttpGet("eventos")]
         public async Task<ApiResponse<GetEventoGroupQueryResult>> GetEventoQueryGroup() => await _mediator.Send(new GetEventoGroupQuery());

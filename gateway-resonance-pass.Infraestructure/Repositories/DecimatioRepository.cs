@@ -1,4 +1,6 @@
-﻿namespace gateway_resonance_pass.Infraestructure.Repositories
+﻿using gateway_resonance_pass.Application.Decimatio.Queries.Regiones.Get;
+
+namespace gateway_resonance_pass.Infraestructure.Repositories
 {
     public sealed class DecimatioRepository : IDecimatioRepository
     {
@@ -45,6 +47,31 @@
             }
       
         }
+        #endregion
+
+        #region Regiones
+        public async Task<ApiResponse<GetRegionGroupQueryResult>> GetRegionesGroup()
+        {
+            try
+            {
+                var response = await Url.AppendPathSegments("Region")
+                    .AllowAnyHttpStatus()
+                    .GetAsync();
+
+                if (response.StatusCode != 200)
+                    throw new BadRequestException("Error en la solicitud HTTP");
+
+                var responseContent = await response.GetStringAsync();
+                var regiones = JsonConvert.DeserializeObject<ApiResponse<GetRegionGroupQueryResult>>(responseContent);
+                return regiones;
+            }
+            catch (Exception ex)
+            {
+                throw new BadRequestException("Hubo un error al obtener las regiones");
+            }
+
+        }
+
         #endregion
 
         #region Eventos
